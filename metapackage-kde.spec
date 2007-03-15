@@ -4,7 +4,6 @@ Version:	3.5
 Release:	0.1
 License:	Freeware
 Group:		Applications/System
-Obsoletes:	role-kde
 Requires:	X11-OpenGL-libGL
 Requires:	giflib
 Requires:	hicolor-icon-theme
@@ -49,9 +48,8 @@ Requires:	kdeutils-kdessh
 Requires:	kdeutils-kgpg
 Requires:	kdeutils-kwalletmanager
 Requires:	konqueror
-Requires:	role-X11-fonts
-%ifnarch %{x8664}
-Requires:	macromedia-flash
+%ifarch %{ix86}
+Requires:	adobe-flash
 %endif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -60,7 +58,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Package to build up KDE desktop environment.
 
-%package -n role-kmail
+%package kmail
 Summary:	kmail
 Group:		Applications/Mail
 Requires:	cyrus-sasl
@@ -77,45 +75,8 @@ Requires:	kdepim-kaddressbook
 Requires:	kdepim-kmail
 Requires:	keychain >= 2.5.0
 Requires:	pinentry-qt
-Obsoletes:	role-kde-kmail
 
-%description -n role-kmail
-
-%package -n role-X11
-Summary:	X11
-Group:		Applications/Mail
-Requires:	X11-Xserver
-Obsoletes:	role-kde-X11
-
-%description -n role-X11
-
-%package -n role-X11-fonts
-Summary:	fonts
-Group:		Applications/Mail
-Requires:	fonts-TTF-bitstream-vera
-Requires:	fonts-TTF-microsoft
-Requires:	fonts-TTF-microsoft-tahoma
-Requires:	role-X11
-Obsoletes:	role-fonts
-Obsoletes:	role-kde-fonts
-
-#X11-fonts
-#X11-fonts-75dpi
-#X11-fonts-75dpi-ISO8859-1
-#X11-fonts-75dpi-ISO8859-10
-#X11-fonts-75dpi-ISO8859-13
-#X11-fonts-75dpi-ISO8859-14
-#X11-fonts-75dpi-ISO8859-15
-#X11-fonts-75dpi-ISO8859-2
-#X11-fonts-75dpi-ISO8859-3
-#X11-fonts-75dpi-ISO8859-4
-#X11-fonts-75dpi-ISO8859-9
-#X11-fonts-ISO8859-1
-#X11-fonts-ISO8859-2
-#X11-fonts-ISO8859-3
-#X11-fonts-KOI8-R
-
-%description -n role-X11-fonts
+%description kmail
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -126,11 +87,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 
-%files -n role-kmail
-%defattr(644,root,root,755)
-
-%files -n role-X11
-%defattr(644,root,root,755)
-
-%files -n role-X11-fonts
+%files kmail
 %defattr(644,root,root,755)
