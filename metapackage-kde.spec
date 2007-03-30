@@ -1,5 +1,6 @@
-Summary:	KDE
-Name:		role-kde
+Summary:	KDE metapackage
+Summary(pl.UTF-8):	Metapakiet KDE
+Name:		metapackage-kde
 Version:	3.5
 Release:	0.1
 License:	Freeware
@@ -48,9 +49,6 @@ Requires:	kdeutils-kdessh
 Requires:	kdeutils-kgpg
 Requires:	kdeutils-kwalletmanager
 Requires:	konqueror
-%ifarch %{ix86}
-Requires:	adobe-flash
-%endif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %prep
@@ -58,8 +56,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Package to build up KDE desktop environment.
 
+%description -l pl.UTF-8
+Pakiet tworzący środowisko graficzne KDE.
+
 %package kmail
-Summary:	kmail
+Summary:	kmail metapackage
+Summary(pl.UTF-8):	Metapakiet kmail
 Group:		Applications/Mail
 Requires:	cyrus-sasl
 Requires:	cyrus-sasl-cram-md5
@@ -77,6 +79,10 @@ Requires:	keychain >= 2.5.0
 Requires:	pinentry-qt
 
 %description kmail
+kmail metapackage.
+
+%description kmail -l pl.UTF-8
+Metapakiet kmail.
 
 %install
 rm -rf $RPM_BUILD_ROOT
