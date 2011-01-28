@@ -51,8 +51,6 @@ Requires:	kdeutils-kwalletmanager
 Requires:	konqueror
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%prep
-
 %description
 Package to build up KDE desktop environment.
 
@@ -83,6 +81,8 @@ kmail metapackage.
 
 %description kmail -l pl.UTF-8
 Metapakiet kmail.
+
+%prep
 
 %install
 rm -rf $RPM_BUILD_ROOT
