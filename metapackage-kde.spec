@@ -2,7 +2,7 @@ Summary:	KDE metapackage
 Summary(pl.UTF-8):	Metapakiet KDE
 Name:		metapackage-kde
 Version:	3.5
-Release:	0.1
+Release:	0.4
 License:	Freeware
 Group:		Applications/System
 Requires:	X11-OpenGL-libGL
@@ -10,7 +10,7 @@ Requires:	giflib
 Requires:	hicolor-icon-theme
 Requires:	kde-kgreet-classic
 Requires:	kde-kgreet-winbind
-Requires:	kde-logoutpic-PLD
+#Requires:	kde-logoutpic-PLD
 Requires:	kde-splashplugin-Standard
 Requires:	kdeaddons-ark
 Requires:	kdeaddons-fsview
@@ -49,6 +49,7 @@ Requires:	kdeutils-kdessh
 Requires:	kdeutils-kgpg
 Requires:	kdeutils-kwalletmanager
 Requires:	konqueror
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -56,6 +57,51 @@ Package to build up KDE desktop environment.
 
 %description -l pl.UTF-8
 Pakiet tworzący środowisko graficzne KDE.
+
+%package kdebase
+Summary:	kdebase metapackage
+Group:		Applications/System
+Requires:	kde-decoration-b2 >= %{version}
+Requires:	kde-decoration-keramik >= %{version}
+Requires:	kde-decoration-laptop >= %{version}
+Requires:	kde-decoration-modernsys >= %{version}
+Requires:	kde-decoration-quartz >= %{version}
+Requires:	kde-decoration-redmond >= %{version}
+Requires:	kde-decoration-web >= %{version}
+Requires:	kde-kio-ldap >= %{version}
+Requires:	kde-kio-nntp >= %{version}
+Requires:	kde-kio-pop3 >= %{version}
+Requires:	kde-kio-smtp >= %{version}
+Requires:	kde-kside-default >= %{version}
+Requires:	kdebase-common-filemanagement >= %{version}
+Requires:	kdebase-common-konsole >= %{version}
+Requires:	kdebase-core >= %{version}
+Requires:	kdebase-desktop >= %{version}
+Requires:	kdebase-infocenter >= %{version}
+Requires:	kdebase-kappfinder >= %{version}
+Requires:	kdebase-kate >= %{version}
+Requires:	kdebase-kdcop >= %{version}
+Requires:	kdebase-kdeprintfax >= %{version}
+Requires:	kdebase-kdialog >= %{version}
+Requires:	kdebase-kfind >= %{version}
+Requires:	kdebase-kfontinst >= %{version}
+Requires:	kdebase-kjobviewer >= %{version}
+Requires:	kdebase-klipper >= %{version}
+Requires:	kdebase-konsole >= %{version}
+Requires:	kdebase-kpager >= %{version}
+Requires:	kdebase-kpersonalizer >= %{version}
+Requires:	kdebase-ksysguard >= %{version}
+Requires:	kdebase-kwrite >= %{version}
+Requires:	kdebase-kwrited >= %{version}
+Requires:	kdebase-libkate >= %{version}
+Requires:	kdebase-libksgrd >= %{version}
+Requires:	kdebase-screensavers >= %{version}
+Requires:	kdebase-useraccount >= %{version}
+Requires:	konqueror >= %{version}
+Requires:	konqueror-libs >= %{version}
+
+%description kdebase
+kdebase metapackage
 
 %package kmail
 Summary:	kmail metapackage
@@ -86,11 +132,15 @@ Metapakiet kmail.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
+%defattr(644,root,root,755)
+
+%files kdebase
 %defattr(644,root,root,755)
 
 %files kmail
