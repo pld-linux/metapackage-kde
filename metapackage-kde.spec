@@ -103,6 +103,31 @@ Requires:	konqueror-libs >= %{version}
 %description kdebase
 kdebase metapackage
 
+%package kdepim
+Summary:	kdepim metapackage
+Group:		Applications/System
+Requires:	kde-kio-groupwise >= %{version}
+Requires:	kde-kio-imap4 >= %{version}
+Requires:	kde-kio-scalix >= %{version}
+Requires:	kdepim >= %{version}
+Requires:	kdepim-akregator >= %{version}
+Requires:	kdepim-devel >= %{version}
+Requires:	kdepim-kaddressbook >= %{version}
+Requires:	kdepim-kalarm >= %{version}
+Requires:	kdepim-kandy >= %{version}
+Requires:	kdepim-karm >= %{version}
+Requires:	kdepim-kitchensync >= %{version}
+Requires:	kdepim-kmail >= %{version}
+Requires:	kdepim-knode >= %{version}
+Requires:	kdepim-knotes >= %{version}
+Requires:	kdepim-konsolekalendar >= %{version}
+Requires:	kdepim-korganizer >= %{version}
+Requires:	kdepim-korn >= %{version}
+Requires:	kdepim-kpilot >= %{version}
+
+%description kdepim
+kdepim metapackage
+
 %package kmail
 Summary:	kmail metapackage
 Summary(pl.UTF-8):	Metapakiet kmail
@@ -141,6 +166,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 
 %files kdebase
+%defattr(644,root,root,755)
+
+%files kdepim
 %defattr(644,root,root,755)
 
 %files kmail
