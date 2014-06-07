@@ -2,7 +2,7 @@ Summary:	KDE metapackage
 Summary(pl.UTF-8):	Metapakiet KDE
 Name:		metapackage-kde
 Version:	3.5
-Release:	0.4
+Release:	0.5
 License:	Freeware
 Group:		Applications/System
 Requires:	X11-OpenGL-libGL
@@ -111,7 +111,6 @@ Requires:	kde-kio-imap4 >= %{version}
 Requires:	kde-kio-scalix >= %{version}
 Requires:	kdepim >= %{version}
 Requires:	kdepim-akregator >= %{version}
-Requires:	kdepim-devel >= %{version}
 Requires:	kdepim-kaddressbook >= %{version}
 Requires:	kdepim-kalarm >= %{version}
 Requires:	kdepim-kandy >= %{version}
